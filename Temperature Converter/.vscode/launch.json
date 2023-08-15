@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "TemperatureConverter",
+      "request": "launch",
+      "mainClass": "TemperatureConverter",
+      "projectName": "Temperature Converter_ffef4345"
+    },
+    {
+      "vmArgs": "--module-path \"d:/Programming/JAVA_OOP_PROBLEMSET/lib\" --add-modules javafx.controls,javafx.fxml",
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "vmArgs": "--module-path \"d:/Programming/JAVA_OOP_PROBLEMSET/lib\" --add-modules javafx.controls,javafx.fxml",
+      "type": "java",
+      "name": "Launch App",
+      "request": "launch",
+      "mainClass": "App"
+    }
+  ]
+}

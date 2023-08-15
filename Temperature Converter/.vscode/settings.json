@@ -1,0 +1,17 @@
+{
+	"java.project.sourcePaths": [
+		"src"
+	],
+	"java.project.outputPath": "bin",
+	"java.project.referencedLibraries": [
+		"lib/**/*.jar",
+		"d:/Programming/JAVA_OOP_PROBLEMSET/lib/javafx.base.jar",
+		"d:/Programming/JAVA_OOP_PROBLEMSET/lib/javafx.controls.jar",
+		"d:/Programming/JAVA_OOP_PROBLEMSET/lib/javafx.fxml.jar",
+		"d:/Programming/JAVA_OOP_PROBLEMSET/lib/javafx.graphics.jar",
+		"d:/Programming/JAVA_OOP_PROBLEMSET/lib/javafx.media.jar",
+		"d:/Programming/JAVA_OOP_PROBLEMSET/lib/javafx.swing.jar",
+		"d:/Programming/JAVA_OOP_PROBLEMSET/lib/javafx.web.jar",
+		"d:/Programming/JAVA_OOP_PROBLEMSET/lib/javafx-swt.ja"
+	]
+}
