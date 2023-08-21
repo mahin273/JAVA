@@ -37,7 +37,10 @@ System.out.println();
         int birthYear = scan.nextInt();
     System.out.println("Employee born in "+ birthYear+ ": ");
 for(Employee employee : employees){
-    if(employee.getDateOfBirth().get(Calendar.YEAR) == birthYear){
+    if (employee.getDateOfBirth().get(Calendar.YEAR) == birthYear) {
+        if (employee instanceof ParttimeEmployee) {
+            System.out.println("Parttime");
+        }
         System.out.println("Employee Name: "+employee.getName());
         System.out.println("Employee ID: "+employee.getID());
         System.out.println("Date of Birth: "+employee.getDateOfBirth().getTime());
