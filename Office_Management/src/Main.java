@@ -74,7 +74,7 @@ public class Main {
         System.out.print("Monthly Salary: ");
         double monthlySalary = scanner.nextDouble();
 
-        scanner.close();
+        
          
         return new FulltimeEmployee(name, id, day, month, year, monthlySalary);
     }
@@ -96,7 +96,7 @@ public class Main {
         System.out.print("Hourly Rate: ");
         double hourlyRate = scanner.nextDouble();
 
-        scanner.close();
+        
 
         return new ParttimeEmployee(name, id, day, month, year, hours, hourlyRate);
         
