@@ -1,12 +1,9 @@
-class FulltimeEmployee extends Employee {
+public class FulltimeEmployee extends Employee{
     private double monthlySalary;
 
-    public FulltimeEmployee(String name, int id, int day, int month, int year, double monthlySalary) {
-        super(name, id, day, month, year);
-        this.monthlySalary = monthlySalary;
-    }
-
-    public void setMonthlySalary(double monthlySalary) {
+    public FulltimeEmployee(String name, int ID, int day, int month,
+                            int year, double monthlySalary) {
+        super(name, ID, day, month, year);
         this.monthlySalary = monthlySalary;
     }
 
@@ -14,8 +11,11 @@ class FulltimeEmployee extends Employee {
         return monthlySalary;
     }
 
+    public void setMonthlySalary(double monthlySalary) {
+        this.monthlySalary = monthlySalary;
+    }
     @Override
-    public double getSalary() {
+    public double getSalary(){
         return monthlySalary;
     }
 }
