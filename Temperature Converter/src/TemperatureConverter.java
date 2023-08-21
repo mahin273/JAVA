@@ -10,7 +10,9 @@ public class TemperatureConverter extends JFrame {
     public TemperatureConverter() {
         // Set up the JFrame
         setTitle("Temperature Converter");
-        setSize(300, 200);
+        setBackground(Color.RED);
+        setSize(700, 600);
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
 
@@ -18,14 +20,15 @@ public class TemperatureConverter extends JFrame {
         JLabel inputLabel = new JLabel("Enter temperature:");
         inputField = new JTextField(10);
         JButton convertButton = new JButton("Convert");
+        convertButton.setBackground(Color.CYAN);
+       
         resultLabel = new JLabel();
-
-        // Add components to the JFrame
-        add(inputLabel);
+        
+        // A
         add(inputField);
         add(convertButton);
         add(resultLabel);
-
+        
         // Handle events
         convertButton.addActionListener(new ActionListener() {
             @Override
