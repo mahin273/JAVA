@@ -5,10 +5,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            for (int i = 0; i < 3; i++) {
-                System.out.println("Enter details for Building #" + (i + 1));
-                System.out.print("Enter building type (1 for sell, 2 for rent): ");
-                int buildingType = scanner.nextInt();
+          for (int i = 0; i < 3; i++) {
+                System.out.println("Enter details for Building #" + (i + 1) + " for sell");
                 System.out.print("Enter building ID: ");
                 int id = scanner.nextInt();
                 System.out.print("Enter number of floors: ");
@@ -24,16 +22,33 @@ public class Main {
                 System.out.print("Enter year of building construction: ");
                 int year = scanner.nextInt();
 
-                if (buildingType == 1) {
-                    BuildingForSell building = new BuildingForSell(id, noOfFloors, floorSize, noOfUnits, day, month, year);
-                    building.setPerSquareFeetPrice(5000);
-                    buildings.add(building);
-                } else if (buildingType == 2) {
-                    BuildingForRent building = new BuildingForRent(id, noOfFloors, floorSize, noOfUnits, day, month, year);
-                    building.setPerSquareFeetPrice(5000);
-                    buildings.add(building);
-                }
+                BuildingForSell buildingForSell = new BuildingForSell(id, noOfFloors, floorSize, noOfUnits, day, month, year);
+                buildingForSell.setPerSquareFeetPrice(5000);
+                buildings.add(buildingForSell);
             }
+
+            for (int i = 0; i < 3; i++) {
+                System.out.println("Enter details for Building #" + (i + 1) + " for rent");
+                System.out.print("Enter building ID: ");
+                int id = scanner.nextInt();
+                System.out.print("Enter number of floors: ");
+                int noOfFloors = scanner.nextInt();
+                System.out.print("Enter floor size (in square feet): ");
+                int floorSize = scanner.nextInt();
+                System.out.print("Enter number of units: ");
+                int noOfUnits = scanner.nextInt();
+                System.out.print("Enter day of building construction: ");
+                int day = scanner.nextInt();
+                System.out.print("Enter month of building construction: ");
+                int month = scanner.nextInt();
+                System.out.print("Enter year of building construction: ");
+                int year = scanner.nextInt();
+
+                BuildingForRent buildingForRent = new BuildingForRent(id, noOfFloors, floorSize, noOfUnits, day, month, year);
+                buildingForRent.setPerSquareFeetPrice(5000);
+                buildings.add(buildingForRent);
+            }
+            
 
             Collections.sort(buildings, new Comparator<Building>() {
                 @Override
