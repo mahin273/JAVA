@@ -1,0 +1,98 @@
+import java.util.Scanner;
+
+class PublicUniversity extends University {
+    private int numberOfHalls;
+    private boolean politicsAllowed;
+
+    public PublicUniversity() {
+    }
+
+    public PublicUniversity(String name, String address, int day, int month, int year, int numberOfDepartments,
+            int numberOfHalls, boolean politicsAllowed) {
+        super(name, address, day, month, year, numberOfDepartments);
+        this.numberOfHalls = numberOfHalls;
+        this.politicsAllowed = politicsAllowed;
+    }
+
+    // Setters and Getters
+    public int getNumberOfHalls() {
+        return numberOfHalls;
+    }
+
+    public void setNumberOfHalls(int numberOfHalls) {
+        this.numberOfHalls = numberOfHalls;
+    }
+
+    public boolean isPoliticsAllowed() {
+        return politicsAllowed;
+    }
+
+    public void setPoliticsAllowed(boolean politicsAllowed) {
+        this.politicsAllowed = politicsAllowed;
+    }
+
+    @Override
+    public String toString() {
+        return "Public " + super.toString() + " [numberOfHalls=" + numberOfHalls + ", politicsAllowed="
+                + politicsAllowed + "]";
+    }
+
+    @Override
+    public int calculateScholarshipAmount(int totalCost, double scholarshipPercentage) {
+        try {
+            double gpa = calculateGPA();
+            if (gpa == 5.00) {
+                return (int) (totalCost * (scholarshipPercentage / 100));
+            } else if (gpa > 4.50 && gpa < 5.00) {
+                return (int) (totalCost * (20 / 100));
+            } else {
+                return 0;
+            }
+        } catch (Exception e) {
+            System.out.println("Error calculating scholarship amount: " + e.getMessage());
+            return 0;
+        }
+    }
+
+    @Override
+    public int calculateEarlyAdmissionCost(int baseCost) {
+        try {
+            double gpa = calculateGPA();
+            if (gpa == 5.00) {
+                return (int) (baseCost * 0.80);
+            } else if (gpa > 4.50 && gpa < 5.00) {
+                return (int) (baseCost * 0.40);
+            } else {
+                return baseCost;
+            }
+        } catch (Exception e) {
+            System.out.println("Error calculating early admission cost: " + e.getMessage());
+            return baseCost;
+        }
+    }
+
+ @Override
+public double calculateGPA() {
+    double gpa = 0.0;
+    try {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of subjects: ");
+        int numberOfSubjects = scanner.nextInt();
+        double totalGradePoints = 0.0;
+        double totalCredits = 0.0;
+        for (int i = 0; i < numberOfSubjects; i++) {
+            System.out.print("Enter grade points for subject " + (i + 1) + ": ");
+            double gradePoints = scanner.nextDouble();
+            System.out.print("Enter credits for subject " + (i + 1) + ": ");
+            double credits = scanner.nextDouble();
+            totalGradePoints += gradePoints * credits;
+            totalCredits += credits;
+        }
+        scanner.close();
+        gpa = totalGradePoints / totalCredits;
+    } catch (Exception e) {
+        System.out.println("Error calculating GPA: " + e.getMessage());
+    }
+    return gpa;
+}
+}
