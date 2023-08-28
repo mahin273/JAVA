@@ -62,6 +62,7 @@ public class Main {
 
         // Sort patients based on age in descending order
         Collections.sort(patients);
+        // Collections.sort(patients, Collections.reverseOrder()); // Alternative
 
         // Print patients with high or low blood pressure
         System.out.println("Patients with high or low blood pressure:");
