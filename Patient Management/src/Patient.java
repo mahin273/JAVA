@@ -13,7 +13,7 @@ class Patient implements Comparable<Patient> {
         this.diabetesPoint = diabetesPoint;
     }
 
-    // Setters and Getters
+  
 
     public String getName() {
         return name;
